@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>On Demand</title>
+    <meta name="keywords" content="html, css, JavaScript" />
+    <meta name="author" content="Chernogorov Viacheslav" />
+    <meta name="description" content="On Request" />
+     <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div class="container">
+        <header>
+            <h1>Проблема с работоспособностью On Demand на платформе SCS</h1>
+        </header>
+        <section class="problem">
+            <h2>Суть проблемы:</h2>
+            <p>На данный момент, при использовании типа подписки "On Demand" (по запросу) на платформе SCS возникают технические проблемы, которые приводят к его неработоспособности.</p>
+        </section>
+        <section class="cause">
+            <h2>Причина проблемы:</h2>
+            <p>При создании услуг нашей платформой требуется использовать уникальный идентификатор (ID) для каждой услуги. Однако при создании "On Demand" услуги, её ID должен совпадать с ID основной (родительской) услугой. Это приводит к ошибке, так как невозможно использовать один и тот же уникальный ID для двух разных услуг. В результате "On Demand" услуга не работает.</p>
+        </section>
+        <section class="solution">
+            <h2>Что нужно сделать:</h2>
+            <p>Для решения этой проблемы необходимо дать возможность привязывать (подключать) ID "On Renewal" (основной) услуги к ID "On Demand" услуги.</p>
+            <p><strong>Возможное решение:</strong></p>
+            <ol>
+                <li>Оставить уникальность ID для каждой услуги.</li>
+                <li>Скорректировать структуру "On Demand" услуги, добавив дополнительный параметр "Tariff Class" (srlsID_TariffClass).</li>
+            </ol>
+	    <div class='solution__description'>
+		<p><strong>Подробный план создания услуги On Demand (On Request)</strong></p>
+                <p>Это позволит операторам работать с услугами более эффективно и прозрачно. При создании "On Demand" услуги процедура будет следующей:</p>
+                <ol>
+                    <li>Создание новой услуги.</li>
+                    <li>В настройках подписки выбираем тип "On Request" (по запросу).</li>
+                    <li>Выбираем основную (родительскую) услугу.</li>
+                    <li>После выбора основной услуги для новой услуги с On Request автоматически присваивается ID родительской услуги.</li>
+                    <li>Выбираем "Tariff Class" в разделе "Charging" (тарифный класс).</li>
+                    <li>Заполняем остальные необходимые поля.</li>
+                    <li>После заполнения всех полей, система формирует уникальный ID "On Demand" услуги, который состоит из ID основной услуги (srlsID) и указанного тарифного класса (TariffClass). Также предоставляется возможность редактирования ID.</li>
+                </ol>
+	    </div>
+
+	    <div class="solution__container">
+            	<p class="solution__schema">"srlsID_TariffClass"</p>
+	    <div/>
+		
+            <p>Это изменение позволит операторам более эффективно управлять услугами "On Demand" и сразу видеть, какая сумма привязана к каждой услуге.</p>
+        </section>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
