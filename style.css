@@ -1,0 +1,146 @@
+/* Общие стили */
+body {
+    background-color: #111;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 32px;
+    margin: 0;
+    color: #fff;
+}
+
+h2 {
+    font-size: 24px;
+    margin-top: 20px;
+    color: #ff9800;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+section {
+    border: 1px solid #444;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #222;
+}
+
+section.problem {
+    border-color: #f44336;
+}
+
+section.cause {
+    border-color: #2196f3;
+}
+
+section.solution {
+    border-color: #4caf50;
+}
+
+.solution__description {
+    margin-top: 50px;
+}
+.solution__container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+
+ul, ol {
+    font-size: 20px; 
+}
+
+li {
+    margin: 10px 0;
+}
+
+.solution__schema {
+    text-align-last: center;
+    border: 5px solid green;
+    min-width: 300px;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Стили для анимации создания ID */
+@keyframes idCreation {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#id-creation {
+    font-size: 24px;
+    margin-top: 20px;
+    animation: idCreation 1.5s ease-in-out;
+    color: #ff5722;
+}
+
+section {
+    border: 1px solid #444;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #222;
+    opacity: 0; /* Начальная прозрачность */
+}
+
+/* Анимация для секции "problem" */
+.problem {
+    animation-name: fadeIn;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+/* Анимация для секции "cause" */
+.cause {
+    animation-name: fadeIn;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 3s; /* Задержка в 3 секунды после анимации "problem" */
+}
+
+/* Анимация для секции "solution" */
+.solution {
+    animation-name: fadeIn;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 6s; /* Задержка в 6 секунд после анимации "cause" */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
